@@ -7,21 +7,20 @@
             Console.WriteLine("How many students in your class?");
             var studentCount = int.Parse(Console.ReadLine());
 
-            var studentNames = new string[studentCount];
-            var studentGrades = new int[studentCount];
+            var studentData = new object[studentCount, 2];
 
             for (int i = 0; i < studentCount; i++)
             {
                 Console.WriteLine("Student Name: ");
-                studentNames[i] = Console.ReadLine();
+                studentData[i, 0] = Console.ReadLine();
 
                 Console.WriteLine("Student Grade: "); // Change to "Student Grade" instead of "Student Number"
-                studentGrades[i] = int.Parse(Console.ReadLine());
+                studentData[i, 1] = int.Parse(Console.ReadLine());
             }
 
             for (int i = 0; i < studentCount; i++)
             {
-                Console.WriteLine("Name: {0}, Grade: {1}", studentNames[i], studentGrades[i]);
+                Console.WriteLine("Name: {0}, Grade: {1}", studentData[i, 0], studentData[i, 1]);
             }
         }
     }
